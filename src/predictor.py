@@ -10,7 +10,7 @@ class Predictor(chainer.Chain):
         """.ctor
 
         Args:
-            model モデル
+            model: モデル
         """
         super(Predictor, self).__init__()
         with self.init_scope():

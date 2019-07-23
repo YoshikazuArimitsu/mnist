@@ -48,38 +48,41 @@ $ python work/train_mnist.py
 
 #### コマンドラインオプション
 
-|オプション|内容|デフォルト値|
-|:--|:--|:--|
-|--batchsize, -b|バッチサイズ|100|
-|--epoch, -e|エポック数|20|
-|--frequency, -f|スナップショット取得間隔|-1|
-|--out, -o|モデル出力先|models/|
-|--resume, -r|スナップショットからの学習再開||
-|--noplot|プロットを作成しない||
-|--gpu, -g|使用GPU ID(-1:CPU)|-1|
-|--model, -m|使用モデル(mlp/cnn)|mlp|
-|--unit, -u|中間層の数(mlp使用時のみ)|1000|
+| オプション      | 内容                           | デフォルト値 |
+| :-------------- | :----------------------------- | :----------- |
+| --batchsize, -b | バッチサイズ                   | 100          |
+| --epoch, -e     | エポック数                     | 20           |
+| --frequency, -f | スナップショット取得間隔       | -1           |
+| --out, -o       | モデル出力先                   | models/      |
+| --resume, -r    | スナップショットからの学習再開 |              |
+| --noplot        | プロットを作成しない           |              |
+| --gpu, -g       | 使用 GPU ID(-1:CPU)            | -1           |
+| --model, -m     | 使用モデル(mlp/cnn)            | mlp          |
+| --unit, -u      | 中間層の数(mlp 使用時のみ)     | 1000         |
 
 ### 推論
 
 ```bash
-$ python work/predict_mnist.py 
+$ python work/predict_mnist.py
 ```
 
 #### コマンドラインオプション
 
-|オプション|内容|デフォルト値|
-|:--|:--|:--|
-|--gpu, -g|使用GPU ID(-1:CPU)|-1|
-|--model, -m|使用モデル(mlp/cnn)|mlp|
-|--unit, -u|中間層の数(mlp使用時のみ)|1000|
+| オプション  | 内容                       | デフォルト値 |
+| :---------- | :------------------------- | :----------- |
+| --gpu, -g   | 使用 GPU ID(-1:CPU)        | -1           |
+| --model, -m | 使用モデル(mlp/cnn)        | mlp          |
+| --unit, -u  | 中間層の数(mlp 使用時のみ) | 1000         |
 
+## Makefile
 
 ### テスト
 
 ```bash
 $ make test
 ```
+
+ユニットテストを実行します
 
 ### API ドキュメント生成
 
@@ -88,3 +91,19 @@ $ make doc
 ```
 
 docs/\_build に HTML が出力されます。
+
+### Lint
+
+```bash
+$ make lint
+```
+
+flake8 を使用して静的解析を行います。
+
+### フォーマット
+
+```bash
+$ make format
+```
+
+autopep8 を使用してソースコードをフォーマットします。

@@ -10,3 +10,6 @@ test:
 
 lint:
 	flake8 ./src/
+
+format:
+	autopep8 --in-place --aggressive --aggressive --recursive ./src/

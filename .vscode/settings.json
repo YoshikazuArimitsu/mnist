@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "python.pythonPath": "${workspaceFolder}/venv/bin/python3",
+  "python.pythonPath": "venv/bin/python3",
   "python.envFile": "${workspaceFolder}/.env",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,

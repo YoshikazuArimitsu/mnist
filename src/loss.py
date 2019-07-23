@@ -10,7 +10,7 @@ class Loss(chainer.Chain):
         """.ctor
 
         Args:
-            model モデル
+            model: モデル
         """
         super(Loss, self).__init__()
         with self.init_scope():
