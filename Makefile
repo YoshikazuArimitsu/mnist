@@ -1,6 +1,3 @@
-# train:
-#	python work/train_mnist.py
-
 doc:
 	sphinx-apidoc -f -o docs/ src/
 	sphinx-build -b html ./docs ./docs/_build

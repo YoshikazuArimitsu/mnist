@@ -25,6 +25,6 @@
   ],
   "dirconfgen.excludeRegex": [
     "docs\\/.+",
-    "^mnist_template\\/models\\/.+"
+    "^mnist\\/models\\/.+"
   ]
 }

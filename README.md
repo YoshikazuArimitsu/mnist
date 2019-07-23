@@ -1,30 +1,41 @@
 # 概要
 
-MNIST。
+- ALBERT ガイドラインに従った構成・クラス設計・コード規約・README・CHANGELOG
+- API ドキュメントの作成(Sphinx)
+- ユニットテスト(動作テスト・検証テスト)を実際に実装  
+  参考: https://qiita.com/icoxfog417/items/67764a6756c4548b5fb8
+- Linter(flake8)
+- Formatter(autopep8)
+- 上記 UT, Linter, Formatter と連携する VSCode 設定
+- GitHub 用 Issue/PR テンプレート
+- direnv による自動仮想環境切り替え・PYTHONPATH 設定
 
-https://qiita.com/icoxfog417/items/67764a6756c4548b5fb8
+を備えた MNIST の実装例です。
 
 ## ディレクトリ構成
 
 <!-- DIRSTRUCTURE_START_MARKER -->
 <pre>
-mnist_template/
+mnist/
 ├─ CHANGELOG ................ 変更履歴
 ├─ Makefile ................. Makefile
 ├─ README.md ................ README
 ├─ requirements.txt ......... Python依存モジュール
 ├─ docs/ .................... APIドキュメント
 ├─ models/ .................. 出力モデル・ログ類
+├─ notebooks/ ............... 実験用ノートブック
+│  ├─ load_digits.ipynb ..... サンプル書き捨てNotebook(1)
+│  └─ load_mnist.ipynb ...... サンプル書き捨てNotebook(2)
 ├─ src/ ..................... ソースコード
-│  ├─ loss.py ............... Lossクラス
-│  ├─ predictor.py .......... Predictorクラス
+│  ├─ loss.py ............... Lossの計算を行うクラス
+│  ├─ predictor.py .......... 推論を行い、ラベルを返すクラス
 │  └─ models/ ............... モデルクラス
 │     ├─ cnn.py ............. CNNモデル実装
 │     └─ mlp.py ............. 3層MLPモデル実装
 ├─ tests/ ................... テストコード
 │  ├─ test_mnist_forward.py . 動作テストコード
 │  └─ test_mnist_work.py .... 検証テストコード
-└─ work/ .................... 実行スクリプト
+└─ work/ .................... 実行エントリポイントとなるスクリプトの配置フォルダ
    ├─ predict_mnist.py ...... MNIST推論スクリプト
    └─ train_mnist.py ........ MNIST学習スクリプト
 </pre>
@@ -82,7 +93,7 @@ $ python work/predict_mnist.py
 $ make test
 ```
 
-ユニットテストを実行します
+ユニットテストを実行します。
 
 ### API ドキュメント生成
 
